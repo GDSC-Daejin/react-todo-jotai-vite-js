@@ -1,5 +1,5 @@
 {
-  "name": "react-vite-todo-jotai",
+  "name": "react-vite-todo-zustand",
   "private": true,
   "version": "0.0.0",
   "type": "module",

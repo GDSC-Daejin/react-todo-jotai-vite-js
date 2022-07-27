@@ -1,6 +1,6 @@
 import React from 'react';
 import HomeLayout from '../../layout/home.jsx';
-import HomeJotaiLayout from '../../layout/JotaiHome.jsx';
+
 import { ContainerInner, LayoutContainer } from '../../styles/layouts';
 
 const Home = () => {
@@ -8,8 +8,7 @@ const Home = () => {
   return (
     <LayoutContainer>
       <ContainerInner>
-        {/*<HomeLayout />*/}
-        <HomeJotaiLayout />
+        <HomeLayout />
       </ContainerInner>
     </LayoutContainer>
   );
