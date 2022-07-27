@@ -1,8 +1,6 @@
-import React from 'react';
 import styled, { css } from 'styled-components';
-import { todoZustandStore } from '../store/todoZustandStore.js';
 
-const TodoWrapper = styled.div`
+export const TodoWrapper = styled.div`
   padding: 10px 10px;
   width: 100%;
   box-sizing: border-box;
@@ -21,7 +19,7 @@ const TodoWrapper = styled.div`
     border-color: ${({ theme }) => theme.colors.googleBlue};
   }
 `;
-const TodoContent = styled.div`
+export const TodoContent = styled.div`
   color: ${({ theme }) => theme.colors.grey50};
   font-size: ${({ theme }) => theme.fontSize.body2};
   ${({ isCompleted }) =>
@@ -31,7 +29,7 @@ const TodoContent = styled.div`
       color: ${({ theme }) => theme.colors.grey600};
     `}
 `;
-const TodoButton = styled.button`
+export const TodoButton = styled.button`
   padding: 5px 10px;
   border: 1px solid ${({ theme }) => theme.colors.grey600};
   border-radius: 10px;
@@ -50,22 +48,3 @@ const TodoButton = styled.button`
     margin-left: 10px;
   }
 `;
-
-const TodoCard = ({ id, content, isCompleted, date }) => {
-  const { removeTodo, toggleCompletedTodo, updateTodo } = todoZustandStore();
-  return (
-    <TodoWrapper onClick={() => toggleCompletedTodo(id)}>
-      <TodoContent isCompleted={isCompleted}>{content}</TodoContent>
-      <div>
-        <TodoButton onClick={() => updateTodo(id, content)}>
-          수정하기
-        </TodoButton>
-        <TodoButton onClick={() => removeTodo(id)} className={'remove'}>
-          삭제하기
-        </TodoButton>
-      </div>
-    </TodoWrapper>
-  );
-};
-
-export default TodoCard;

@@ -13,9 +13,9 @@ import {
   TodoWrapper,
 } from './home.styled.js';
 import { todoZustandStore } from '../store/todoZustandStore.js';
-import TodoCard from '../components/TodoCard.jsx';
+import TodoCardZustand from '../components/TodoCardZustand.jsx';
 
-const HomeLayout = () => {
+const HomeZustandLayout = () => {
   const { todos, addTodo } = todoZustandStore();
   // input 값 받기
   const [content, setContent] = useState(null);
@@ -59,7 +59,7 @@ const HomeLayout = () => {
         {/*TODO 데이터 뿌리기*/}
         {todos.map((todo) => (
           <TodoWrapper key={todo.id}>
-            <TodoCard {...todo} />
+            <TodoCardZustand {...todo} />
           </TodoWrapper>
         ))}
       </TodoSection>
@@ -67,4 +67,4 @@ const HomeLayout = () => {
   );
 };
 
-export default HomeLayout;
+export default HomeZustandLayout;
